@@ -50,3 +50,25 @@
  .destino{
    padding-bottom: 100px;
  }
+
+ /* Login */
+ #body_devise{
+
+   margin: 0px;
+   padding: 0px;
+   background: url("Santiago_Login.jpg");
+   background-size: cover;
+   background-position: center;
+ }
+ .form-continer{
+   color: #fff;
+   border: 0px solid #fff;
+   padding: 50px 60px;
+   margin-top: 45vh;
+   margin-bottom: 20vh;
+   -webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+   -moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+   -box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+ }
+
+ /*  end Login*/
