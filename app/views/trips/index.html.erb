@@ -6,8 +6,10 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Price</th>
+      <th>Date</th>
       <th>Users</th>
-      <th colspan="3"></th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
@@ -15,7 +17,9 @@
     <% @trips.each do |trip| %>
       <tr>
         <td><%= trip.name %></td>
-        <td><%= trip.users %></td>
+        <td><%= trip.price %></td>
+        <td><%= trip.date %></td>
+        <td><%= trip.user.id %></td>
         <td><%= link_to 'Show', trip %></td>
         <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
         <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
