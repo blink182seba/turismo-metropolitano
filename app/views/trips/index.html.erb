@@ -1,8 +1,52 @@
-<p id="notice"><%= notice %></p>
+<div class="home">
+<div class="home_background parallax-window bgts" data-parallax="scroll" data-image-src="<%= asset_path 'background-image/san_pedrodeatacama.jpg' %>" data-speed="0.8"></div></div>
+<div class="top">
+  <div class="container">
+    <div class="row">
+          <% @trips.each do |trip| %>
+          <div class="col-lg-6 col-md-6 top_col">
+            <a data-toggle="modal" data-target="#<%= trip.id%>">
+              <div class="top_item">
+                <div class="top_item_image embalse gl"><%= image_tag trip.photo%></div>
+                <div class="top_item_content">
+                  <div class="top_item_price">Por <%= trip.price%></div>
+                  <div class="top_item_price"><%= trip.date%></div>
+                  <div class="top_item_text"><%= trip.name%></div>
+                </div>
+              </div>
+            </a>
+            <div class="modal fade" id="<%= trip.id%>">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3>*****Actividades*****</h3>
+                  </div>
+                  <div class="modal-body">
+                    <ul>
+                      <% trip.activities.each do |activity| %>
+                        <li><%= activity.name %></li>  
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- <p id="notice"><%= notice %></p>
 
 <h1>Trips</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -28,6 +72,6 @@
   </tbody>
 </table>
 
-<br>
+<br> -->
 
 <%= link_to 'New Trip', new_trip_path %>
