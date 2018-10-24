@@ -5,4 +5,6 @@ class ApplicationController < ActionController::Base
        format.html { redirect_to root_url, alert: exception.message }
       end
   end
+
+  enum :role['admin', 'user']
 end
