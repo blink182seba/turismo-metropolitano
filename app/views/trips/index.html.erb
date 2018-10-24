@@ -12,6 +12,11 @@
                   <div class="top_item_price">Por <%= trip.price%></div>
                   <div class="top_item_price"><%= trip.date%></div>
                   <div class="top_item_text"><%= trip.name%></div>
+                  <% if can?(:manage, trip) %>
+                  <td><%= link_to 'Show', trip %></td>
+                  <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
+                  <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <% end %>
                 </div>
               </div>
             </a>
@@ -24,7 +29,7 @@
                   <div class="modal-body">
                     <ul>
                       <% trip.activities.each do |activity| %>
-                        <li><%= activity.name %></li>  
+                        <li><%= activity.name %></li>
                       <% end %>
                     </ul>
                   </div>

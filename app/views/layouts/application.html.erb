@@ -55,6 +55,11 @@
     			</div>
     		</div>
     	</header>
+      <% if alert.present? %>
+      <div class="alert">
+        <%= alert %>
+      </div>
+      <% end %>
     <%= yield %>
     <footer class="footer">
   		<div class="container">
