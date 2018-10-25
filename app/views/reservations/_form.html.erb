@@ -1,3 +1,6 @@
+<div class="home">
+<div class="home_background parallax-window bgts" data-parallax="scroll" data-image-src="<%= asset_path 'background-image/san_pedro.jpg' %>" data-speed="0.8"></div></div>
+<div class="top">
 <%= form_with(model: reservation, local: true) do |form| %>
   <% if reservation.errors.any? %>
     <div id="error_explanation">
@@ -33,3 +36,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>

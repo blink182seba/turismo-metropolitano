@@ -1,5 +1,7 @@
+<div class="home">
+<div class="home_background parallax-window bgts" data-parallax="scroll" data-image-src="<%= asset_path 'background-image/san_pedro.jpg' %>" data-speed="0.8"></div></div>
 <p id="notice"><%= notice %></p>
-
+<div class="top">
 <h1>Reservations</h1>
 
 <table>
@@ -16,7 +18,7 @@
   <tbody>
     <% @reservations.each do |reservation| %>
       <tr>
-        <td><%= reservation.user %></td>
+        <td><%= reservation.user.id %></td>
         <td><%= reservation.date %></td>
         <td><%= reservation.name_trip %></td>
         <td><%= reservation.price %></td>
@@ -27,7 +29,7 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Reservation', new_reservation_path %>
