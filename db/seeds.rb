@@ -14,7 +14,7 @@ activity1 = Activity.create!([{name: "Excursion por los andes"},{name: "Visitar 
 activity2 = Activity.create!([{name: "Colorado Sky center"},{name: "Parque puente Ñilhue"},{name: "Plaza de los Pumas"}])
 activity3 = Activity.create!([{name: "Laguna del Inca"},{name: "Sky Portillo"},{name: "Ruta CH-60"}])
 activity4 = Activity.create!([{name: "Aguas Termales"},{name: "Masaje Corporal"},{name: "#{activity1[0].name}"}])
-user = User.create!(:email => "test@example.com", :password => "test123", :password_confirmation => "test123")
+user = User.create!(:email => "test@example.com", :password => "test123", :password_confirmation => "test123", :name => 'test', :last_name => 'example', :phone => '12345678')
 trips = ["Embalse del yeso","Farellones","Portillo","Termas"]
 4.times do |i|
   t = Trip.create!(name: "#{trips[i]}", price: Faker::Commerce.price.to_i, date: "2018-10-19 22:05:00", user: user, photo: "seed/#{i+1}")
