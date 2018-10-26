@@ -17,7 +17,7 @@ activity4 = Activity.create!([{name: "Aguas Termales"},{name: "Masaje Corporal"}
 user = User.create!(:email => "test@example.com", :password => "test123", :password_confirmation => "test123", :name => 'test', :last_name => 'example', :phone => '12345678')
 trips = ["Embalse del yeso","Farellones","Portillo","Termas"]
 4.times do |i|
-  t = Trip.create!(name: "#{trips[i]}", price: Faker::Commerce.price.to_i, date: "2018-10-19 22:05:00", user: user, photo: "seed/#{i+1}")
+  t = Trip.create!(name: "#{trips[i]}", price: '4990', date: "2018-10-19 22:05:00", user: user, photo: "seed/#{i+1}")
   t.activities << activities
   if i < 1
     t.activities << activity1
