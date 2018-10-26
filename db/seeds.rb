@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Trip.destroy_all
 Activity.destroy_all
+AdminUser.destroy_all
 User.destroy_all
 activities = Activity.create!([{name: "Hotel 3 Estrellas"},{name: "Desayunar"},{name: "Almorzar"},{name: "Salida Bailable"}])
-activities_cajon= []
 activity1 = Activity.create!([{name: "Excursion por los andes"},{name: "Visitar laguna los patos"},{name: "Trekking"}])
 activity2 = Activity.create!([{name: "Colorado Sky center"},{name: "Parque puente Ñilhue"},{name: "Plaza de los Pumas"}])
 activity3 = Activity.create!([{name: "Laguna del Inca"},{name: "Sky Portillo"},{name: "Ruta CH-60"}])
@@ -33,3 +33,4 @@ trips = ["Embalse del yeso","Farellones","Portillo","Termas"]
     t.save!
   end
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
