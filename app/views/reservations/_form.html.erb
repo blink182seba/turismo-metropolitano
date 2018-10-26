@@ -1,39 +1,46 @@
 <div class="home">
 <div class="home_background parallax-window bgts" data-parallax="scroll" data-image-src="<%= asset_path 'background-image/san_pedro.jpg' %>" data-speed="0.8"></div></div>
 <div class="top">
-<%= form_with(model: reservation, local: true) do |form| %>
-  <% if reservation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+  <div class="row">
+    	<div class="col-md-4 col-sm-4 col-xs-12"></div>
+      	<div class="col-md-4 col-sm-4 col-xs-12">
+    <%= form_with(model: reservation, local: true) do |form| %>
+      <% if reservation.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
 
-      <ul>
-      <% reservation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% reservation.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
+
+      <div class="field">
+        <%= form.hidden_field :user_id, value: current_user.id %>
+      </div>
+    <%= %>
+      <div class="field">
+        <%= form.hidden_field :date, value: Time.current %>
+      </div>
+
+      <div class="field">
+        <%= form.label :name_trip %>
+        <%= form.select :name_trip, Trip.pluck(:name), id: 'name_trip', class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :price %>
+        <%= form.number_field :price, class: "form-control"%>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.hidden_field :user_id, value: current_user.id %>
-  </div>
-<%= %>
-  <div class="field">
-    <%= form.hidden_field :date, value: Time.current %>
+    <div class="col-md-4 col-sm-4 col-xs-12"></div>
   </div>
 
-  <div class="field">
-    <%= form.label :name_trip %>
-    <%= form.select :name_trip, Trip.pluck(:name) %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price%>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
 </div>

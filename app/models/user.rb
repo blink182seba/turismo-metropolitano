@@ -8,6 +8,9 @@ class User < ApplicationRecord
   before_create :set_default_role
   before_update :set_default_role
   enum role: [:admin, :user]
+  validates :email, presence: true
+  validates :email, uniqueness: true
+  validates :password, presence: true
 
   def set_default_role
     self.role = :user

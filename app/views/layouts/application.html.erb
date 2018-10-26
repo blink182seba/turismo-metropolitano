@@ -28,7 +28,7 @@
     								<li class="main_nav_item active"><a href="<%= pages_index_path %>">Home</a></li>
     								<li class="main_nav_item"><a href="<%= pages_index_path %>#acerca">Quienes Somos</a></li>
     								<li class="main_nav_item"><a href="<%= trips_path %>">Viajes de temporada</a></li>
-									<li class="main_nav_item"><a href="<%= pages_contacto_path %>">Contacto</a></li>
+									<li class="main_nav_item"><a href="<%= new_reservation_path %>">Reserva</a></li>
 									<% unless current_user %>
 										<li class="main_nav_item"><a href="<%= new_user_session_path %>">Iniciar Sesión</a></li>
 									<% else %>
