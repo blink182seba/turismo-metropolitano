@@ -10,6 +10,10 @@ class TripsController < ApplicationController
   # GET /trips/1
   # GET /trips/1.json
   def show
+      respond_to do |format|
+        format.html
+        format.json { render json: @trip }
+      end
   end
 
   # GET /trips/new

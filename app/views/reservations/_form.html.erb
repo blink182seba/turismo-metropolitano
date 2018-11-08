@@ -1,5 +1,6 @@
 <div class="home">
-<div class="home_background parallax-window bgts" data-parallax="scroll" data-image-src="<%= asset_path 'background-image/san_pedro.jpg' %>" data-speed="0.8"></div></div>
+<div class="home_background parallax-window" data-parallax="scroll" data-image-src="<%= asset_path 'images/homecontacto.jpg' %>" data-speed="0.8"></div>
+</div>
 <div class="top">
   <div class="row">
     	<div class="col-md-4 col-sm-4 col-xs-12"></div>
@@ -26,21 +27,25 @@
       </div>
 
       <div class="field">
-        <%= form.label :name_trip %>
-        <%= form.select :name_trip, Trip.pluck(:name), id: 'name_trip', class: "form-control" %>
+        <%= form.label 'Nombre del viaje' %>
+        <%= form.select :name_trip, Trip.pluck(:name, :id), class: "contact_input contact_input_name" %>
       </div>
 
-      <div class="field">
-        <%= form.label :price %>
-        <%= form.number_field :price, class: "form-control"%>
+      <div class="field" id="precio">
+        <%= form.label 'Precio' %>
+        <%= form.select :price, class: "contact_input contact_input_name"%>
       </div>
 
       <div class="actions">
-        <%= form.submit %>
+        <%= form.submit 'Reservar viaje'%>
       </div>
     <% end %>
+
+    <%= link_to 'Mis viajes', reservations_path%>
     </div>
-    <div class="col-md-4 col-sm-4 col-xs-12"></div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+
+    </div>
   </div>
 
 </div>

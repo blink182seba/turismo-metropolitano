@@ -16,8 +16,9 @@ activity3 = Activity.create!([{name: "Laguna del Inca"},{name: "Sky Portillo"},{
 activity4 = Activity.create!([{name: "Aguas Termales"},{name: "Masaje Corporal"},{name: "#{activity1[0].name}"}])
 user = User.create!(:email => "test@example.com", :password => "test123", :password_confirmation => "test123", :name => 'test', :last_name => 'example', :phone => '12345678')
 trips = ["Embalse del yeso","Farellones","Portillo","Termas"]
+price = [4990, 5700, 1000, 8990]
 4.times do |i|
-  t = Trip.create!(name: "#{trips[i]}", price: '4990', date: "2018-10-19 22:05:00", user: user, photo: "seed/#{i+1}")
+  t = Trip.create!(name: "#{trips[i]}", price: "#{price[i]}", date: "2018-10-19 22:05:00", user: user, photo: "seed/#{i+1}")
   t.activities << activities
   if i < 1
     t.activities << activity1

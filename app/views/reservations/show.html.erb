@@ -1,24 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="home">
+<div class="home_background parallax-window" data-parallax="scroll" data-image-src="<%= asset_path 'images/homecontacto.jpg' %>" data-speed="0.8"></div>
+</div>
+<div class="top">
+  <p id="notice"><%= notice %></p>
+  <p>
+    <strong>User:</strong>
+    <%= @reservation.user.id %>
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @reservation.user.id %>
-</p>
+  <p>
+    <strong>Date:</strong>
+    <%= @reservation.date %>
+  </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @reservation.date %>
-</p>
+  <p>
+    <strong>Nombre del viaje:</strong>
+    <%= @reservation.name_trip %>
+  </p>
 
-<p>
-  <strong>Name trip:</strong>
-  <%= @reservation.name_trip %>
-</p>
+  <p>
+    <strong>Precio:</strong>
+    <%= @reservation.price %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @reservation.price %>
-</p>
+  <%= link_to 'Editar', edit_reservation_path(@reservation) %> |
+  <%= link_to 'Volver', reservations_path %>
 
-<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
-<%= link_to 'Back', reservations_path %>
+</div>
