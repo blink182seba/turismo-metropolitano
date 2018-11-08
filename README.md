@@ -1,5 +1,5 @@
-https://git.heroku.com/hidden-eyrie-91711.git
-https://youtu.be/PkVw7iy959A
+https://hidden-eyrie-91711.herokuapp.com/
+https://youtu.be/ANchcODwkko
 # README
 
 This README would normally document whatever steps are necessary to get the
